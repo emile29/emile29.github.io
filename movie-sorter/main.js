@@ -1,6 +1,6 @@
 var api_key = "90ea25bcf2c8e9212b3ea355438a8baf";
 
-function getPop(){ 
+function getByPopularity(){ 
     $("#error").html("");
     $("#show").html("");
     $.ajax({
