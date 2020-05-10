@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css);
+
+body{
+	width:100%;
+	margin:0;
+	padding:0;
+	background-color:#FDEBD0;
+}
+#header{
+	font-family:lobster;
+}
+#name{
+	font-family:serif;
+	margin-bottom:1%;
+}
+#wrap{
+	text-align:center;
+}
+#image{
+	width:12%;
+	margin-bottom:2%;
+}
+#searchbar{
+	width:30%;
+	border-radius:3px;
+	margin-bottom:.5%;
+}
+#searchbutton{
+	padding-top:2.5px;
+	height:27px;
+	background-color:#F0B27A;
+	color:white;
+}
+#randomsearch{
+	padding-top:2.5px;
+	height:27px;
+	background-color:#F0B27A;
+	color:white;
+}
+#wrap1{
+	margin-right:27%;
+	margin-left:25%;
+	margin-top:10px;
+	font-size:15px;
+	font-family:calibri;
+}
+.btn-primary{
+	text-align:left;
+	border-radius:3px;
+	background-color:#F5CBA7;
+	padding-right:10px;
+	padding-left:10px;
+	color:black;
+}
+#a :hover{
+	background-color:#F0B27A;
+}
+#a{
+	text-decoration:none;
+}
+
+/* SMALL SCREENS */
+@media only screen and (max-width: 900px) {
+	#header{
+		font-family:lobster;
+		font-size:30px;
+	}
+	#name{
+		font-size:13px;
+		font-family:serif;
+		margin-bottom:3%;
+		margin-top:-10px;
+	}
+	#image{
+		width:16%;
+		margin-bottom:4%;
+	}
+	#searchbar{
+		width:50%;
+		border-radius:3px;
+		margin-bottom:.5%;
+	}
+	#searchbutton{
+		padding-top:1.8px;
+		height:25px;
+		background-color:#F0B27A;
+		color:white;
+	}
+	#randomsearch{
+		padding-top:1.8px;
+		height:25px;
+		background-color:#F0B27A;
+		color:white;
+	}
+	#wrap1{
+		margin-right:6%;
+		margin-left:2%;
+		margin-top:10px;
+		font-size:15px;
+		font-family:calibri;
+	}
+}

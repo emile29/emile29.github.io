@@ -1,0 +1,25 @@
+@import 'global.css';
+
+.para {
+    line-height: 26px;
+}
+
+.para-wrap {
+    margin-bottom: 40px;
+    display: flex;
+}
+
+.para-wrap .para {
+    padding-left: 22px;
+}
+
+
+img {
+    width: 250px;
+    height: 140px;
+    border-radius: 2px;
+}
+
+img:hover {
+    opacity: .5;
+}

@@ -1,0 +1,74 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+    --base-color: #292929;
+    --secondary-color: #00ffff;
+    --base-font-family: 'Roboto Mono', monospace;
+    --base-font-size: 16px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--base-color);
+    font-family: var(--base-font-family);
+    font-size: var(--base-font-size);
+    margin: 0;
+    color: #fafafa;
+}
+
+.nav-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    background-color: var(--base-color);
+    opacity: .9;
+}
+
+.left-section, .right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.left-section div a {
+    margin-right: 22px;
+}
+
+.right-section div a {
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.page-content {
+    padding: 94px 16% 40px;
+}
+
+.para-header {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #7fffd4;
+}
+
+.para-header-2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--secondary-color);
+}
+
+.para {
+    line-height: 34px;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #66ccff;
+}

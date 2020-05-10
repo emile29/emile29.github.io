@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta http-equiv="Cache-control" name="viewport" content="no-cache, width=device-width, initial-scale=0.8">
+
+<link rel='stylesheet' type='text/css' href='weatherteller.css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="weatherteller.js"></script>
+
+<div class='topnav'>
+	<h1 id='header'><b>WeatherTeller</b>
+	<span id='header1'><b>by Emile Li</b></span>
+	</h1>
+</div>
+
+<div id='wrap1'>
+	<h3 id='welcome'>Welcome to Emile's weather forcast</h3>
+	<p><button id='f-y-c-weather' class='btn'>Find your current weather</button>
+	<button class='btn' id='toggleTemp'>Celsius to Fahrenheit</button></p>
+
+	<div id='searchbox'>
+		<h3 id='f-a-forcast'>Find a forecast</h3>
+		<input id='searchbar' type='text' placeholder="Enter a city name"></input>
+		<button id='submitWeather' type='submit' class="btn">Search</button>
+		<span id="error"></span>
+	</div>
+
+	<h3><div id="show"></div></h3>
+	
+</div>
+

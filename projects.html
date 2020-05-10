@@ -1,62 +1,80 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=0.8">
-<link rel='stylesheet' type='text/css' href='projects.css'>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='styles/projects.css'>
 
 <body>
-<!-- TOP NAVBAR -->
-<nav class='topnav'>
-    <div id='eportfolio'><a href='index.html'>EMILE LI</a></div>
+    <!-- NAV BAR -->
+    <div class='nav-bar'>
+        <div class='left-section'>
+            <div>
+                <a href="index.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+            </div>
+        </div>
+        <div class='right-section'>
+            <div>
+                <a class='mail' title='email' href='mailto:emile.litim@mail.utoronto.ca' target="_blank">&#9993</a>
+                <a class='fa fa-github' title='github' href='https://github.com/eltc29' target="_blank"></a>
+                <a class='fa fa-linkedin' title='linkedin' href='https://www.linkedin.com/in/emile-li-076656160/' target="_blank"></a>
+            </div>
+        </div>
+    </div>
 
-    <ul>
-        <li><a href="index.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Resume</a></li>
-    </ul>
-</nav>
+    <!-- PAGE CONTENT -->
+    <div class='page-content'>
+        <div class='para-header'>PROJECTS</div>
+        <div class='para'>
+            Below are my projects which i built using HTML, CSS and JavaScript. I am currently
+            learning new web development tools such as MEAN Stack and MarkoJS.
+        </div>
 
-<!-- PROJECTS -->
-<div id="projects">
-    <p id='para-header'>PROJECTS</p>
-    <p id='para-wrap'>
-        Below are my projects which i built using HTML, CSS and Javascript. I am currently learning new web development tools such as MongoDB, Express.js, AngularJS and Node.js.
-    </p><br>
-    <ul>
-    <li>
-        <p style='color:aquamarine;font-size:16px'>WeatherTeller</p>
-        <p id='sidetext'>
-        <a href='weatherteller'><img src='images/weatherteller.png'></a>
-            In this project, i used the <em>openweathermap</em> api to fetch data in json format and used different informations available such as weather, location and so on.
-        </p>
-    </li>
-    <li>
-        <p style='color:aquamarine;font-size:16px'>Wikipedia Search Engine</p>
-        <p id='sidetext'>
-        <a href='search-eng'><img src='images/search-eng.png'></a>
-            In this project, i used the <em>wikipedia</em> api to get data about the different wikipedia results obtained on an item that a user would have actually searched on wikipedia. I limit the results to 10 results in this project just to get an idea.
-        </p>
-    </li>
-    <li>
-        <p style='color:aquamarine;font-size:16px'>Random Quote Generator</p>
-        <p id='sidetext'>
-        <a href='rqgen/index.html'><img src='images/rqgen.png'></a>
-            In this project, i used the <em>forismatic</em> api to generate a quote each time i make a jquery call. The api used has a database of famous quotes invented by well-known people throughout history.
-        </p>
-    </li>
-    <li>
-        <p style='color:aquamarine;font-size:16px'>Movie Sorter Project</p>
-        <p id='sidetext'>
-        <a href='movie-sorter'><img src='images/movie-sorter.png'></a>
-            In this project, i used the <em>themoviedb</em> api to get data about the latest trending movies. In addition, i added the feature of getting the most popular movies within a particular year. I extracted the relevant info in json format before displaying it on the website.
-        </p>
-    </li>
-    </ul>
-</div>
+        <div class='para-header-2'>WeatherTeller</div>
+        <div class='para-wrap'>
+            <div>
+                <a href='projects/weatherteller' target="_blank"><img src='images/weatherteller.png'></a>
+            </div>
+            <div class='para'>
+                In this project, i used the <em>openweathermap</em> api to fetch data in json
+                format and used different informations available such as weather, location and so on.
+            </div>
+        </div>
+
+        <div class='para-header-2'>Wikipedia Search Engine</div>
+        <div class='para-wrap'>
+            <div>
+                <a href='projects/search-eng' target="_blank"><img src='images/search-eng.png'></a>
+            </div>
+            <div class='para'>
+                In this project, i used the <em>wikipedia</em> api to get data about the different
+                wikipedia results obtained on an item that a user would have actually searched on
+                wikipedia. I limit the results to 10 results in this project just to get an idea.
+            </div>
+        </div>
+
+        <div class='para-header-2'>Random Quote Generator</div>
+        <div class='para-wrap'>
+            <div>
+                <a href='projects/rqgen' target="_blank"><img src='images/rqgen.png'></a>
+            </div>
+            <div class='para'>
+                In this project, i used the <em>forismatic</em> api to generate a quote each time
+                i make a jquery call. The api used has a database of famous quotes created by
+                well-known people throughout history.
+            </div>
+        </div>
+
+        <div class='para-header-2'>Movie Sorter Project</div>
+        <div class='para-wrap'>
+            <div>
+                <a href='projects/movie-sorter' target="_blank"><img src='images/movie-sorter.png'></a>
+            </div>
+            <div class='para'>
+                In this project, i used the <em>themoviedb</em> api to get data about the latest
+                trending movies. In addition, i added the feature of getting the most popular
+                movies within a particular year. I extracted the relevant info in json format
+                before displaying it on the website.
+            </div>
+        </div>
+    </div>
 </body>
-
-<div class='footer'>
-    <a style='margin-right:20px' id='envelope' href='mailto:emile.litim@mail.utoronto.ca'>&#9993</a>
-    <a href='https://github.com/eltc29' style='margin-right:20px;color:white;text-decoration:none' class='fa fa-github'></a>
-    <a href='https://www.linkedin.com/in/emile-li-076656160/' style='color:white;text-decoration:none' class='fa fa-linkedin'></a>
-</div>
-<br><br>
