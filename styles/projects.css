@@ -13,7 +13,6 @@
     padding-left: 22px;
 }
 
-
 img {
     width: 250px;
     height: 140px;
@@ -22,4 +21,14 @@ img {
 
 img:hover {
     opacity: .5;
+}
+
+@media screen and (max-width: 425px) {
+    .para-wrap {
+        display: block;
+    }
+
+    .para-wrap .para {
+        padding: 10px 0 0;
+    }
 }

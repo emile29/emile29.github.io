@@ -33,17 +33,17 @@ body {
     opacity: .9;
 }
 
-.left-section, .right-section {
+.nav-bar > .left-section, .right-section {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.left-section div a {
+.nav-bar .left-section div a {
     margin-right: 22px;
 }
 
-.right-section div a {
+.nav-bar .right-section div a {
     margin-left: 20px;
     font-size: 18px;
 }
@@ -71,4 +71,22 @@ body {
 
 .highlight {
     color: #66ccff;
+}
+
+@media screen and (max-width: 425px) {
+    .nav-bar {
+        padding: 0 18px;
+    }
+
+    .nav-bar .left-section div a {
+        margin-right: 12px;
+    }
+
+    .nav-bar .right-section div a {
+        margin-left: 8px;
+    }
+
+    .page-content {
+        padding: 70px 7% 40px;
+    }
 }
