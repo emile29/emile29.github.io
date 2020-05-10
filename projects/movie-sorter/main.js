@@ -1,6 +1,6 @@
 var api_key = "90ea25bcf2c8e9212b3ea355438a8baf";
 
-function getPop(){ 
+function getByPopularity(){
     $("#error").html("");
     $("#show").html("");
     $.ajax({
@@ -16,11 +16,11 @@ function getPop(){
                 sypnosis = data.results[i].overview;
                 avgRating = data.results[i].vote_average;
                 relDate = data.results[i].release_date;
-                
+
                 getGenresAndDisp(image, title, sypnosis, avgRating, relDate, data.results[i].genre_ids);
             }
         }
-    }) 
+    })
 }
 
 function bestOfYear(){
@@ -33,7 +33,7 @@ function bestOfYear(){
     }
 }
 
-function getBestOfYear(year){ 
+function getBestOfYear(year){
     $("#error").html("");
     $("#show").html("");
     var gte = year+"-01-01";
@@ -51,11 +51,11 @@ function getBestOfYear(year){
                 sypnosis = data.results[i].overview;
                 avgRating = data.results[i].vote_average;
                 relDate = data.results[i].release_date;
-                
+
                 getGenresAndDisp(image, title, sypnosis, avgRating, relDate, data.results[i].genre_ids);
             }
         }
-    }) 
+    })
 }
 
 function getGenresAndDisp(image, title, sypnosis, avgRating, relDate, genres_arr){
@@ -71,13 +71,13 @@ function getGenresAndDisp(image, title, sypnosis, avgRating, relDate, genres_arr
                     if (data.genres[i].id == genres_arr[j]){
                         if (genres != "")
                             genres += ", "+data.genres[i].name;
-                        else 
+                        else
                             genres += data.genres[i].name;
                         break;
                     }
                 }
             }
-            
+
             $("#show").append(
                     "<li>"+"<img src="+image+"><b>"+title+"</b><p>Sypnosis: "+sypnosis+"</p><p>Genres: "+genres+"</p><p>Avg. rating: "+avgRating+"</p><p>Initial release date: "+relDate+"</p></li>");
         }
