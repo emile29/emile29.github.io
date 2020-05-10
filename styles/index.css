@@ -1,1 +1,7 @@
 @import 'global.css';
+
+@media screen and (max-width: 425px) {
+    .para {
+        line-height: 26px;
+    }
+}
