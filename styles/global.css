@@ -43,9 +43,23 @@ body {
     margin-right: 22px;
 }
 
-.nav-bar .right-section div a {
-    margin-left: 20px;
+.nav-bar .right-section div {
+    display: flex;
+}
+
+.nav-bar .right-section div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 24px;
+}
+
+.fa {
     font-size: 18px;
+}
+
+.fa-envelope-o {
+    font-size: 16.5px;
 }
 
 .page-content {
@@ -82,8 +96,8 @@ body {
         margin-right: 12px;
     }
 
-    .nav-bar .right-section div a {
-        margin-left: 8px;
+    .nav-bar .right-section div div {
+        margin-left: 15px;
     }
 
     .page-content {

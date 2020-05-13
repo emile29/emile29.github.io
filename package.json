@@ -1,0 +1,6 @@
+{
+    "name": "portfolio",
+    "scripts": {
+        "start": "browser-sync start -s -f . --no-notify"
+    }
+}
