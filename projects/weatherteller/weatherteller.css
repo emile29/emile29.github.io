@@ -173,6 +173,10 @@ input:checked + .slider:before {
 @media screen and (max-width: 425px) {
 	body {
 		padding: 8.5% 1%;
+		background: linear-gradient(90deg,rgba(47,150,163,.8),rgba(48,62,143,.8)),
+					url('https://i.pinimg.com/originals/22/fd/5c/22fd5cd7610d6521eb19cdefe7049c50.jpg') no-repeat left,
+					linear-gradient(90deg,#2f96a3,#303e8f);
+		background-size: cover 100vh;
 	}
 
 	.author {
