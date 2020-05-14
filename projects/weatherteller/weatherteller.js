@@ -1,85 +1,207 @@
+var currentTemp;
+var tempToggleOn = false;
 
-$(document).ready(function(){
-	if (navigator.geolocation)
-	{
-		navigator.geolocation.getCurrentPosition(function(position)
-		{
-			$("#f-y-c-weather").click(function()
-			{
-				var url="https://fcc-weather-api.glitch.me/api/current?lat=";
-				$.getJSON(url+position.coords.latitude+"&lon="+position.coords.longitude,function(data)
-				{
-					$("#show").html("<p><span id='font1'>Latitude</span>: "+data.coord.lat+", <span id='font1' style='font-weight:bold;'>Longitude</span>: "+data.coord.lon+"</p>"+
-										"<p><span id='font1'>City</span>: "+data.name+"</p>"+
-										 "<p><span id='font1'>Country</span>: "+data.sys.country+"</p>"+
-									  "<p><span id='font1'>Weather</span>: <img style='margin-top:-15px;margin-bottom:-18px;' src="+data.weather[0].icon+".png"+">"+data.weather[0].main+"</p>"+
-									  "<p><span id='font1'>Description</span>: "+data.weather[0].description+"</p>"+
-									  "<p><span id='font1'>Temperature</span>: "+data.main.temp+" Deg. Cel."+"</p>"+
-									  "<p><span id='font1'>Humidity</span>: "+data.main.humidity+"</p>" );
-					$("#toggleTemp").click(function()
-					{
-						$("#show").html("<p><span id='font1'  >Latitude</span>: "+data.coord.lat+", <span id='font1'>Longitude</span>: "+data.coord.lon+"</p>"+
-									"<p><span id='font1'>City</span>: "+data.name+"</p>"+
-								  "<p><span id='font1'>Country</span>: "+data.sys.country+"</p>"+
-								  "<p><span id='font1'>Weather</span>: <img style='margin-top:-15px;margin-bottom:-18px;' src="+data.weather[0].icon+".png"+">"+data.weather[0].main+"</p>"+
-								  "<p><span id='font1'>Description</span>: "+data.weather[0].description+"</p>"+
-								  "<p><span id='font1'>Temperature</span>: "+((data.main.temp*1.8)+32)+" Deg. Fahr."+"</p>"+
-								  "<p><span id='font1'>Humidity</span>: "+data.main.humidity+"</p>" )
-					});
-				})
-			})
+$(document).ready(function() {
+	$('.temp-toggle-input').click(function() {
+		tempToggleOn = !tempToggleOn;
+		if ($(this).is(':checked')) {
+			if (currentTemp) {
+				$('.temp').html(`${((currentTemp*1.8)+32).toFixed(2)} °F`);
+			}
+		} else {
+			if (currentTemp) {
+				$('.temp').html(`${currentTemp} °C`);
+			}
+		}
+	});
+
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			$(".current-weather").click(function() {
+				$(".city").val('');
+				$(".country").val('');
+				$.ajax({
+					url: `https://fcc-weather-api.glitch.me/api/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}`,
+					dataType: 'json',
+					success: function(data) {
+						currentTemp = data.main.temp;
+						var temp = data.main.temp + ' °C';
+						if (tempToggleOn) {
+							temp = ((currentTemp*1.8)+32).toFixed(2) + ' °F';
+						}
+						var weatherIcon = "http://openweathermap.org/img/w/"+data.weather[0].icon+".png";
+						$('.wearther-info-placeholder').html(`
+							<div class='fade-in'>
+								<div class='city-country'>${data.name}, ${data.sys.country}</div>
+								<div class="img-description-container">
+									<img src=${weatherIcon}>${data.weather[0].description}
+								</div>
+								<div class="temp">${temp}</div>
+								<div class="wind-speed">
+									<div><div>
+										<div><i class='fas fa-wind'></i></div>
+										<div>${data.wind.speed} mph</div>
+									</div></div>
+								</div>
+							</div>
+
+							<style>
+								.fade-in {
+									animation: fadeInAnimation ease .7s;
+								}
+
+								@keyframes fadeInAnimation {
+									0% {
+										opacity: 0;
+									}
+									100% {
+										opacity: 1;
+									}
+								}
+
+								.city-country, .img-description-container, .temp, .wind-speed div {
+									height: 50px;
+								}
+
+								.city-country, .temp, .wind-speed {
+									display: flex;
+									flex-direction: column;
+									justify-content: space-around;
+								}
+
+								.wind-speed div {
+									display: flex;
+									justify-content: space-around;
+								}
+
+								.wind-speed div div {
+									display: flex;
+								}
+
+								.wind-speed div div div {
+									display: flex;
+									flex-direction: column;
+									justify-content: space-around;
+								}
+
+								.wind-speed div div div i {
+									margin-right: 8px;
+								}
+							</style>
+						`);
+					}
+				});
+			});
 		});
 	}
-	
-	$("#submitWeather").click(function()
-	{
-		var place=$("#searchbar").val();
-		var api_url="https://api.openweathermap.org/data/2.5/weather&q=";
-		var key="e2558ce3776bd3e019f2b1990c450e58";
-		$.ajax
-		({
-			url: "https://api.openweathermap.org/data/2.5/weather?q="+place+"&units=metric"+"&APPID=e2558ce3776bd3e019f2b1990c450e58",
-			dataType: "json",
-			success: function(data)
-			{
-				var icon="http://openweathermap.org/img/w/"+data.weather[0].icon+".png";
-				
-				$("#show").html("<p><span id='font1'>City</span>: "+data.name+"</p>"+
-								  "<p><span id='font1'>Country</span>: "+data.sys.country+"</p>"+
-								  "<p><span id='font1'>Weather</span>: <img style='margin-top:-15px;margin-bottom:-18px;' src="+icon+">"+data.weather[0].main+"</p>"+
-								  "<p><span id='font1'>Description</span>: "+data.weather[0].description+"</p>"+
-								  "<p><span id='font1'>Temperature</span>: "+data.main.temp+" Deg. Cel.</p>"+
-								  "<p><span id='font1'>Humidity</span>: "+data.main.humidity+"</p>"+
-								  "<p><span id='font1'>Wind Speed</span>: "+data.wind.speed+" mph</p>");
-				
-				$("#toggleTemp").click(function()
-				{
-					$("#show").html("<p><span id='font1'>City</span>: "+data.name+"</p>"+
-							  "<p><span id='font1'>Country</span>: "+data.sys.country+"</p>"+
-							  "<p><span id='font1'>Weather</span>: <img style='margin-top:-15px;margin-bottom:-18px;' src="+icon+">"+
-							  data.weather[0].main+"</p>"+
-							  "<p><span id='font1'>Description</span>: "+data.weather[0].description+"</p>"+
-							  "<p><span id='font1'>Temperature</span>: "+((data.main.temp*1.8)+32)+" Deg. Fahr."+"</p>"+
-							  "<p><span id='font1'>Humidity</span>: "+data.main.humidity+"</p>"+
-							  "<p><span id='font1'>Wind Speed</span>: "+data.wind.speed+" mph</p>" )
-				});
-				$("#error").html('');
-			},
-			error:function(errorMessage)
-			{
-				$("#error").html("<p style='margin:0 0 0 30px'>Field cannot be empty or city doesn't exist.</p>");
+
+	$(".submit").click(function() {
+		var city = $(".city").val();
+		var countryCode = $(".country").val();
+
+		if (city && countryCode) {
+			var baseUrl="https://api.openweathermap.org/data/2.5/weather?q=";
+			var key="e2558ce3776bd3e019f2b1990c450e58";
+			$.ajax({
+				url: `${baseUrl}${city}&units=metric&APPID=${key}`,
+				dataType: "json",
+				success: function(data) {
+					if (data.sys.country.toLowerCase() == countryCode.toLowerCase()) {
+						currentTemp = data.main.temp;
+						var temp = data.main.temp + ' °C';
+						if (tempToggleOn) {
+							temp = ((currentTemp*1.8)+32).toFixed(2) + ' °F';
+						}
+						var weatherIcon = "http://openweathermap.org/img/w/"+data.weather[0].icon+".png";
+						$('.wearther-info-placeholder').html(`
+							<div class='fade-in'>
+								<div class='city-country'>${data.name}, ${data.sys.country}</div>
+								<div class="img-description-container">
+									<img src=${weatherIcon}>${data.weather[0].description}
+								</div>
+								<div class="temp">${temp}</div>
+								<div class="wind-speed">
+									<div><div>
+										<div><i class='fas fa-wind'></i></div>
+										<div>${data.wind.speed} mph</div>
+									</div></div>
+								</div>
+							</div>
+
+							<style>
+								.fade-in {
+									animation: fadeInAnimation ease .7s;
+								}
+
+								@keyframes fadeInAnimation {
+									0% {
+										opacity: 0;
+									}
+									100% {
+										opacity: 1;
+									}
+								}
+
+								.city-country, .img-description-container, .temp, .wind-speed div {
+									height: 50px;
+								}
+
+								.city-country, .temp, .wind-speed {
+									display: flex;
+									flex-direction: column;
+									justify-content: space-around;
+								}
+
+								.wind-speed div {
+									display: flex;
+									justify-content: space-around;
+								}
+
+								.wind-speed div div {
+									display: flex;
+								}
+
+								.wind-speed div div div {
+									display: flex;
+									flex-direction: column;
+									justify-content: space-around;
+								}
+
+								.wind-speed div div div i {
+									margin-right: 8px;
+								}
+							</style>
+						`);
+					} else {
+						$(".wearther-info-placeholder").html(`
+							<p style='font-size: 18px'>Wrong country code</p>
+						`);
+					}
+				},
+				error: function(err) {
+					$(".wearther-info-placeholder").html(`
+						<p style='font-size: 18px'>City doesn't exist</p>
+					`);
+				}
+			});
+		} else {
+			if (city == '') {
+				alert('Enter a city first!!');
+			} else {
+				alert('Enter a country code first!!');
 			}
-		});
+		}
 	});
 
-	$("#searchbar").keypress(function()
-	{
-		if(event.keyCode==13)
-		{
-			$("#submitWeather").click();
-		} 
+	$(".city").keypress(function() {
+		if (event.keyCode == 13) {
+			$(".submit").click();
+		}
+	});
+
+	$(".country").keypress(function() {
+		if (event.keyCode == 13) {
+			$(".submit").click();
+		}
 	});
 });
-    
-
-

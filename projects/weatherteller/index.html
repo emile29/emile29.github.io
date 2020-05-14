@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<meta http-equiv="Cache-control" name="viewport" content="no-cache, width=device-width, initial-scale=0.8">
-
-<link rel='stylesheet' type='text/css' href='weatherteller.css'>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='weatherteller.css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script src="weatherteller.js"></script>
 
-<div class='topnav'>
-	<h1 id='header'><b>WeatherTeller</b>
-	<span id='header1'><b>by Emile</b></span>
-	</h1>
-</div>
-
-<div id='wrap1'>
-	<h3 id='welcome'>Welcome to Emile's weather forecast</h3>
-	<p><button id='f-y-c-weather' class='btn'>Find your current weather</button>
-	<button class='btn' id='toggleTemp'>Celsius to Fahrenheit</button></p>
-
-	<div id='searchbox'>
-		<h3 id='f-a-forcast'>Find a forecast</h3>
-		<input id='searchbar' type='text' placeholder="Enter a city name"></input>
-		<button id='submitWeather' type='submit' class="btn">Search</button>
-		<span id="error"></span>
+<body>
+	<div class="header-container">
+		<div class='header'>WeatherTeller</div>
+		<div class='author'>by emile</div>
 	</div>
 
-	<h3><div id="show"></div></h3>
+	<div class='search-row'>
+		<input class='city' placeholder="City">
+		<input class='country' placeholder="Country code (e.g: US)">
+		<button class='submit' type="submit"><i class='fa fa-search'></i></button>
+		<div class="second-row"><div>
+			<div class='current-weather-container'>
+				<button class='current-weather'>current weather</button>
+			</div>
+			<div class="temp-toggle-container">
+				<div><label class="temp-toggle">
+					<input class="temp-toggle-input" type="checkbox" unchecked>
+					<span class="slider round"></span>
+				</label></div>
+				<div class='deg-to-fahr'>
+					<b>°C / °F</b>
+				</div>
+			</div>
+		</div></div>
+	</div>
 
-</div>
-
+	<div class="wearther-info-placeholder"></div>
+</body>
