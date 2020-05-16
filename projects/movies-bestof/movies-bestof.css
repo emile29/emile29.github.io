@@ -1,0 +1,110 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap');
+
+body {
+    font-family: 'Nunito Sans';
+    background-color: beige;
+    font-size: 14px;
+}
+
+button, input {
+    padding: 0 8px;
+    border: none;
+    border-radius: 2px;
+    height: 20px;
+}
+
+button {
+    background-color: beige;
+    color: black;
+}
+
+button:hover {
+    color: grey;
+}
+
+.header-bar {
+    background-color: burlywood;
+    padding: 10px 0;
+    color: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+.second-row, .second-row div, .best-of-year {
+    display: flex;
+}
+
+.first-row {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.header {
+    font-size: 40px;
+    line-height: 30px;
+    font-family: courier;
+    word-spacing: -7px;
+}
+
+.second-row {
+    justify-content: space-around;
+}
+
+.best-of-year {
+    margin-left: 20px;
+}
+
+.best-of-year .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.best-of-year .year {
+    margin-left: 4px;
+    width: 80px;
+    color: black;
+}
+
+.submit {
+    margin-left: 3.2px;
+}
+
+.results-placeholder {
+    padding: 104px 24% 10px;
+}
+
+.result-container {
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.img-container {
+    margin-right: 14px;
+}
+
+.img {
+    border-radius: 3px;
+}
+
+.right-section div {
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 425px) {
+    .results-placeholder {
+        padding: 102px 4% 10px;
+    }
+
+    .img {
+        width: 150px;
+    }
+}
