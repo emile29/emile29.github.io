@@ -45,6 +45,13 @@ button, input {
 
 .submit, .random-search {
 	height: 26px;
+	background-color: #F0B27A;
+	color: white;
+	border: none;
+}
+
+.submit:hover, .random-search:hover {
+	color: grey;
 }
 
 .result-box {
