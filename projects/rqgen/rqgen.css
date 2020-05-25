@@ -1,62 +1,79 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css);
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body {
 	background-color: #F5CBA7;
-}
-.quote-box {
-	border-radius:5px;
-	position:relative;
-	width:35%;
-	height:250px;
-	margin: 40px auto 10px auto;
-	padding:0px 20px 0px 20px;
-	display: table;
-	background-color:#E59866;
-}
-button{
-	background-color:#E59866;
-	color:white;
-}
-header{
-	padding-top:30px; 
-}
-#quote-author{
-	text-align:right;
-	color: white;
-	font-size:20px;
-	font-family:serif;
-	font-style:italic;
-	margin:0 3% 0 3%;
-}
-#quote-content{
+	padding: 5% 0;
 	text-align: center;
+	font-size: 14px;
 	color: white;
-	font-size:20px;
-	font-family:serif;
-	font-style:italic;
-	margin:0 3% 0 3%;
-}
-#quote-source{
-	text-align:center;
-	color: white;
-	font-size:14px;
-	margin:-2% 0 2% 0;
 }
 
-@media only screen and (max-width: 900px){
-	#wrap{
-		margin:0 2% 0 2%;
-	}
-	.quote-box {
-		border-radius:5px;
-		position:relative;
-		width:85%;
-		height:250px;
-		margin: 40px auto 10px auto;
-		padding:0px 20px 0px 20px;
-		display: table;
-		background-color:#E59866;
-	}
+.header-container {
+	color: #E59866;
+}
+
+.header {
+	font-size: 32px;
+	line-height: 36px;
+}
+
+.app-author {
+	font-size: 12px;
+}
+
+.quote-box-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+.quote-box {
+	margin-top: 20px;
+	width: 400px;
+	padding: 0 20px;
+	text-align: left;
+	background-color: #E59866;
+	border-radius: 4px;
+}
+
+.quote-content, .quote-author {
+	font-family: serif;
+	font-style: italic;
+	font-size: 16px;
+}
+
+.quote-content {
+	padding: 0 24px;
+}
+
+.quote-author {
+	text-align: right;
+}
+
+.quote-source {
+	text-align: center;
+	margin-bottom: 8px;
+}
+
+.buttons-container {
+	margin-top: 16px;
+}
+
+.buttons-container button {
+	background-color: #E59866;
+	border: none;
+	border-radius: 3px;
+	padding: 4px 8px;
+}
+
+.buttons-container button:not(:last-child) {
+	margin-right: 4px;
+}
+
+.buttons-container button:hover {
+	color: grey;
+}
+
+.twitter, .tumblr {
+	width: 29px;
 }

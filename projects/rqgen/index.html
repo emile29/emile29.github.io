@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<meta http-equiv="Cache-control" name="viewport" content="no-cache, width=device-width, initial-scale=0.8">
-
-<link rel='stylesheet' type='text/css' href='rqgen.css'>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='rqgen.css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="rqgen.js"></script>
 
-<div id='wrap'>
-	<header style="text-align:center; height:130px">
-        <h1 style="text-align:center; font-family:impact; font-size:35px; margin-bottom:-24px"><font color="#E59866">Random Quote Generator</font></h1>
-		<p style='margin-top:28px;color:#E59866; font-family:seorge-ui; font-size:14px;'><b>by Emile</b></p>
-	</header>
-
-	<div class="quote-box">
-		<h1 style="text-align:left; font-family:serif; margin-bottom:-15px"><font color="white">"</font></h1>
-		<div id='quote-content'></div>
-		<h1 style="text-align:right; font-family:serif; margin-top:-15px"><font color="white">"</font></h1>
-        <div id='quote-author' style='margin-bottom:30px'></div>
-		<div id='quote-source'></div>
+<body>
+	<div class='header-container'>
+		<div class='header'>Random Quote Generator</div>
+		<div class='app-author'>by emile</div>
 	</div>
 
-    <div style='text-align:center'>
-        <button onclick='getQuote()' style='margin-left:.5%' id="newquote" class="btn">New Quote</button>
-        <button onclick='twitter()' style='margin-left:.5%' id="twitter" class="btn"><a class="fa fa-twitter" title="tweet quote!"></a></button>
-        <button onclick='tumblr()' style='margin-left:.5%' id="tumblr" class="btn"><a class="fa fa-tumblr" title="post to tumblr!"></a></button>
-    </div>
-</div>
+	<div class='quote-box-container'>
+		<div class="quote-box">
+			<h1>"</h1>
+			<div class='quote-content'></div>
+			<h1 style="text-align: right;">"</h1>
+			<div class='quote-author'></div>
+			<div class='quote-source'></div>
+		</div>
+	</div>
+
+	<div class='buttons-container'>
+		<button class='new-quote'>New Quote</button>
+		<button class='twitter'><i class="fa fa-twitter" title="tweet quote!"></i></button>
+		<button class='tumblr'><i class="fa fa-tumblr" title="post to tumblr!"></i></button>
+	</div>
+</body>
