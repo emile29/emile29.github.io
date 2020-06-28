@@ -47,12 +47,17 @@ $(document).ready(function() {
 		let city = $(".city").val(),
 			countryCode = $(".country").val();
 
-		if (city && countryCode) {
+		if (city) {
 			$.ajax({
 				url: `${baseUrl}q=${city}&units=metric&APPID=${key}`,
 				dataType: "json",
 				success: function(data) {
-					if (data.sys.country.toLowerCase() == countryCode.toLowerCase()) {
+					if (countryCode && data.sys.country.toLowerCase() != countryCode.toLowerCase()) {
+						$(".wearther-info-placeholder").html(`
+							<p style='font-size: 18px'>Wrong country code</p>
+						`);
+					}
+					else {
 						currentTemp = data.main.temp;
 						let temp = `${data.main.temp} °C`,
 							weatherIcon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
@@ -60,10 +65,6 @@ $(document).ready(function() {
 							temp = `${((currentTemp*1.8)+32).toFixed(2)} °F`;
 						}
 						displayWeatherInfo(data.name, data.sys.country, weatherIcon, data.weather[0].description, temp, data.wind.speed);
-					} else {
-						$(".wearther-info-placeholder").html(`
-							<p style='font-size: 18px'>Wrong country code</p>
-						`);
 					}
 				},
 				error: function(err) {
@@ -73,11 +74,7 @@ $(document).ready(function() {
 				}
 			});
 		} else {
-			if (city == '') {
-				alert('Enter a city first!!');
-			} else {
-				alert('Enter a country code first!!');
-			}
+			alert('Enter a city first!!');
 		}
 	});
 
