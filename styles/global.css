@@ -6,7 +6,7 @@
     --base-color: #292929;
     --secondary-color: #00ffff;
     --base-font-family: 'Roboto Mono', monospace;
-    --base-font-size: 14px;
+    --base-font-size: 16px;
 }
 
 a:hover {
@@ -28,7 +28,7 @@ body {
     height: 54px;
     display: flex;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 0 20%;
     background-color: var(--base-color);
     opacity: .9;
 }
@@ -63,7 +63,7 @@ body {
 }
 
 .page-content {
-    padding: 94px 16% 40px;
+    padding: 94px 20% 40px;
 }
 
 .para-header {
