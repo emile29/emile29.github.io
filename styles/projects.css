@@ -13,15 +13,20 @@
     padding-left: 22px;
 }
 
+.project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 img {
     width: 250px;
     height: 140px;
     border-radius: 2px;
 }
 
-img:hover {
+/* img:hover {
     opacity: .5;
-}
+} */
 
 @media screen and (max-width: 425px) {
     .para-wrap {
