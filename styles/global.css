@@ -1,12 +1,12 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
 :root {
     --base-color: #292929;
     --secondary-color: #00ffff;
-    --base-font-family: 'Roboto Mono', monospace;
-    --base-font-size: 15px;
+    --base-font-family: 'Nunito Sans', sans-serif;
+    --base-font-size: 16px;
 }
 
 a:hover {
@@ -48,9 +48,6 @@ body {
 }
 
 .nav-bar .right-section div div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     margin-left: 24px;
 }
 
